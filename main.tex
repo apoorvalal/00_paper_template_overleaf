@@ -1,0 +1,110 @@
+\documentclass[12pt,reqno, titlepage]{amsart} % add titlepage param for separate title page
+\input{boilerplate/mpaper_boilerplate}
+
+\usepackage[foot]{amsaddr}
+
+% bibliography
+\usepackage[
+backend=biber,
+style=authoryear,
+citestyle=authoryear,
+]{biblatex}
+\addbibresource{/home/alal/Dropbox/MyLibrary2.bib}
+\renewbibmacro{in:}{}
+\setcounter{secnumdepth}{5}
+
+% \usepackage{fontspec}
+\usepackage[no-math]{fontspec}
+\setmainfont{TeX Gyre Pagella}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ########     ###    ########  ######## ########
+% ##     ##   ## ##   ##     ## ##       ##     ##
+% ##     ##  ##   ##  ##     ## ##       ##     ##
+% ########  ##     ## ########  ######   ########
+% ##        ######### ##        ##       ##   ##
+% ##        ##     ## ##        ##       ##    ##
+% ##        ##     ## ##        ######## ##     ##
+
+\title{Paper Title}
+
+\author{Apoorva Lal}
+\email{{\href{mailto:apoorval@stanford.edu}{apoorval@stanford.edu}}}
+\address{Stanford University, CA}
+
+% \author{Avi Acharya}
+% \email{{\href{mailto:avidit@stanford.edu}{avidit@stanford.edu}}}
+% \address{Stanford University, CA}
+
+\keywords{KW1, KW2}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract} Abstract goes here.
+\end{abstract}
+
+\maketitle
+
+\listoftodos
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\linenumbers
+\modulolinenumbers[5]
+\thepart{}
+\section{Introduction} \label{intro}
+
+
+\beq
+\Exp{Y | \vee{X} = \vee{x}} = \alpha_0 + \beta \vee{x}
+\eeq
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Results}
+
+
+\lipsum[5]
+\todo[inline]{describe specification}
+\textcite{sutton2018reinforcement}
+
+\begin{figure}[tb]
+  \centering
+  \figinc{figures/staggered_did.pdf}
+  \label{fig:figure1}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
+\printbibliography
+
+\newpage
+\renewcommand{\thetable}{A\arabic{table}}
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+\appendix
+% \part{Online Appendix}
+% \parttoc
+
+\begin{refsection}
+\section{Simulations} % (fold)
+\label{sec:simulations}
+
+\section{Geodata} % (fold)
+\label{sec:geodata}
+\textcite{jordahlGeoPandasPythonTools2014}
+% section geodata (end)
+
+
+% section simulations (end)
+\printbibliography
+\end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\medskip
+
+\end{document}
